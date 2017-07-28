@@ -55,7 +55,7 @@
 	}
 
 
-    h1{
+    #header{
     font-family: 'Indie Flower', cursive;
     text-align: center;
     }
@@ -77,7 +77,7 @@
         width: 100%;
     }
 
-input:focus{
+#sticky:focus{
 	background: yellow;
 	border: 3px solid #2980b9;
 	outline: none;
@@ -110,19 +110,19 @@ input:focus{
 }
 
 
-ul li{
+ul li .post{
   list-style:none;
     font-family: 'Indie Flower', cursive;
     color: #2980b9;
     box-shadow: 0 0 3px rgba(0,0,0, 0.1);
 
 }
-ul{
+ul #boardNotes{
   overflow:hidden;
   padding:1em;
 }
 
-ul li {
+ul li .post{
   text-decoration:none;
   color:#000;
   background:#ffc;
@@ -133,7 +133,7 @@ ul li {
 
 }
 
-ul li {
+ul li .post{
   margin:1em;
   float:left;
 }
