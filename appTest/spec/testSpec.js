@@ -28,14 +28,4 @@ describe("Testing UI - POST IT NOTES", function() {
 
         expect(true).toEqual(true);
     });
-
-    it("Test case 3:", function() {
-        console.log($('#sticky').attr('placeholder'));
-        expect(true).toEqual(true);
-    });
-
-    it("Test case 4:", function() {
-        console.log($('#sticky').attr('placeholder'));
-        expect(true).toEqual(true);
-    });
 });
