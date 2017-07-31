@@ -17,7 +17,7 @@ function loadHtml() {
 }
 describe("Testing UI - POST IT NOTES", function() {
     beforeAll(function() {
-        loadHtml();
+        loadHtml().done;
     });
     it("Test case 1: Check Notes Empty", function() {
         expect($('.post').length).toEqual(1);

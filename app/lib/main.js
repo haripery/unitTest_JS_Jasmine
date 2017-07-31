@@ -28,7 +28,7 @@ var UiFramework = (function() {
     button.attr("class", options.buttonClass);
     button.text(options.label);
     return button;
-};
+}
 
     return {
       input: input,
@@ -43,10 +43,41 @@ var makeButton = function(options){
     button.attr("class", options.buttonClass);
     button.text(options.label);
     return button;
+
+var makeInput = function(options){
+    var input = $("<input>");
+    input.attr("id", options.id);
+    input.attr("type", "text");
+    input.attr("placeholder", options.placeholder);
+    input.attr("name",options.name);
+    input.attr("class", options.inputClass);
+    input.text(options.label);
+    input.attr("maxlength",options.maxLength);
+    return input;
 };
 
 $(document).ready(function(){
+    //making Variables for Jquery selectors
+    var $colorbutton = $('#colorButton');
+    var $inp =$('#inp')
+
+    //Creating DOM elements
+    var pink= makeButton({id: "pink", label: "+"});
+    var orange= makeButton({id: "orange", label: "+"});
+    var cyan= makeButton({id: "cyan", label: "+"});
+
+    var stickyinput = makeInput({id:"sticky",placeholder:"Add New Notes",name:"stickyinput",class:"stickyclass",maxlength:"17"});
+
+    //Append the DOM elements to the respective IDs
+    $colorbutton.append(pink);
+    $colorbutton.append(orange);
+    $colorbutton.append(cyan);
+
+    $inp.append(stickyinput);
+
+
     //Select Color
+
     $("button").on('click',function(event){
         configureButton(this);
     });
@@ -61,13 +92,7 @@ $(document).ready(function(){
         deleteNotes(this);
     });
     //
-    var button1= makeButton({id: "pink2", label: "+"});
-    var button2= makeButton({id: "orange2", label: "+"});
-    var button3= makeButton({id: "cyan2", label: "+"});
 
-    $('#colorButton').append(button1);
-    $('#colorButton').append(button2);
-    $('#colorButton').append(button3);
 });
 
 
@@ -100,6 +125,10 @@ $(document).ready(function(){
     function  cyanClick(){
         $("input[name=stickyinput]").css("background-color", "rgb(0,255,255)");//Cyan color applied to the Notes
     }
+//Delete Notes Function
+    function deleteNotes(buffer){
+            $(buffer).parent().remove();
+    }
 
     //Adding Notes Function
     function addNotes(){
@@ -113,7 +142,3 @@ $(document).ready(function(){
             sticyColor="yellow";
     }
 
-    //Delete Notes Function
-    function deleteNotes(buffer){
-            $(buffer).parent().remove();
-    }
